@@ -1,0 +1,13 @@
+# Java files
+*.java linguist-detectable=true linguist-language=Java text eol=lf
+
+# Generated/compiled files (ignore in language stats)
+*.class linguist-generated=true
+*.jar binary linguist-generated=true
+
+# Build directories (ignore in language stats)
+target/** linguist-generated=true
+build/** linguist-generated=true
+
+# Dependencies
+*.bat text eol=crlf
