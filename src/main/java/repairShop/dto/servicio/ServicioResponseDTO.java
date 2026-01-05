@@ -13,13 +13,13 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ServicioSimpleDTO {
+public class ServicioResponseDTO {
     private Long id;
     private TipoServicio tipoServicio;
     private BigDecimal precioServicio;
 
-    public static ServicioSimpleDTO fromEntity(Servicio servicio) {
-        return ServicioSimpleDTO.builder()
+    public static ServicioResponseDTO fromEntity(Servicio servicio){
+        return ServicioResponseDTO.builder()
                 .id(servicio.getId())
                 .tipoServicio(servicio.getTipoServicio())
                 .precioServicio(servicio.getPrecioServicio())
