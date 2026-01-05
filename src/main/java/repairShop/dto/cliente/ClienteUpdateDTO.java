@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ClienteUpdateDTO {
+    private Long id;
     @NotBlank(message = "El nombre es obligatorio")
     @Size(min = 2, max = 50, message = "El nombre debe tener entre 2 y 50 caracteres")
     private String nombre;
@@ -28,8 +29,8 @@ public class ClienteUpdateDTO {
     private String correoElectronico;
 
     @Pattern(regexp = "\\d{10}", message = "El teléfono debe contener exactamente 10 dígitos numéricos")
-    private String telefono;
+    private Long telefono;
 
     @Pattern(regexp = "^\\d{1,12}$", message = "El NIT debe contener solo dígitos y máximo 12 caracteres")
-    private String nit;
+    private Long nit;
 }

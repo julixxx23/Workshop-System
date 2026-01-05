@@ -11,18 +11,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    // Búsquedas parciales
+    boolean existsByNit(Long nit);
+    boolean existsByCorreoElectronico(String correo);
+    Optional<Cliente> findByCorreoElectronico(String correo);
     List<Cliente> findByNombreContainingIgnoreCase(String nombre);
     List<Cliente> findByApellidoContainingIgnoreCase(String apellido);
-
-    // Paginación con búsqueda
     Page<Cliente> findByNombreContainingIgnoreCase(String nombre, Pageable pageable);
-
-    // Listados ordenados
     List<Cliente> findAllByOrderByNombreAsc();
     Page<Cliente> findAllByOrderByNombreAsc(Pageable pageable);
-
-    // Búsquedas combinadas
     Optional<Cliente> findByNombreAndApellido(String nombre, String apellido);
 
 
